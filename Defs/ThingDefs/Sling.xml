@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ==================== Sling ==================== -->
+  <ThingDef ParentName="BaseWeaponNeolithic">
+    <defName>CE_Sling</defName>
+    <label>sling</label>
+    <description>A simple weapon made from a leather pouch and length of cord, capable of hurling a stone or metal projectile over a great distance.</description>
+    <graphicData>
+      <texPath>Weapons/Sling</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>  	  
+    </graphicData>
+    <soundInteract>Interact_Autopistol</soundInteract>
+    <statBases>
+      <WorkToMake>2800</WorkToMake>
+      <SightsEfficiency>0.6</SightsEfficiency>
+      <ShotSpread>1</ShotSpread>
+      <SwayFactor>2</SwayFactor>
+      <Bulk>0.8</Bulk>
+      <Mass>0.3</Mass>
+      <RangedWeapon_Cooldown>3.2</RangedWeapon_Cooldown>
+    </statBases>
+	<costStuffCount>50</costStuffCount>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_SlingBullet_Stone</defaultProjectile>
+        <warmupTime>2.4</warmupTime>
+        <range>32</range>
+        <soundCast>Interact_BeatFire</soundCast>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <ammoSet>AmmoSet_SlingBullet</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes" />
+    </comps>
+    <weaponTags>
+      <li>NeolithicRangedBasic</li>
+    </weaponTags>
+    <recipeMaker>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+      </recipeUsers>
+    </recipeMaker>
+  </ThingDef>
+  
+</Defs>
+
+

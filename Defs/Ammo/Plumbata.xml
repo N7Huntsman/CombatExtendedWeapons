@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<!-- ================== Projectiles ================== -->
+	
+	<!-- The amount of arrows usable over the ammo lifetime for each resource cost is equal to
+	[r / (1 - x)];
+		x = preExplosionSpawnChance,
+		r = resource cost. -->
+	
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="BasePilumProjectile">
+		<defName>Plumbata_Thrown</defName>
+		<label>plumbata (thrown)</label>
+		<graphicData>
+			<texPath>Projectiles/Plumbata_Projectile</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>		
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>8</damageAmountBase>
+			<speed>7</speed>
+			<armorPenetrationBlunt>2.36</armorPenetrationBlunt>
+			<armorPenetrationSharp>2</armorPenetrationSharp>
+			<preExplosionSpawnChance>0.65</preExplosionSpawnChance>	<!-- 4 javelins per resource -->
+			<preExplosionSpawnThingDef>CE_Plumbata</preExplosionSpawnThingDef>
+		</projectile>
+	</ThingDef>
+
+	<!-- ==================== Recipes ========================== -->
+  <RecipeDef ParentName="AmmoRecipeNeolithicBase">
+    <defName>MakeAmmo_Plumbata</defName>
+    <label>make plumbata x5</label>
+    <description>Craft 5 plumbata.</description>
+	<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+	<workSkill>Crafting</workSkill>
+	<recipeUsers>
+		<li>ElectricSmithy</li>
+		<li>FueledSmithy</li>
+	</recipeUsers>
+	<effectWorking>Smelt</effectWorking>
+	<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+    <workAmount>700</workAmount>	
+    <jobString>Making plumbata.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>WoodLog</li>
+        <li>Steel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <CE_Plumbata>5</CE_Plumbata>
+    </products>
+  </RecipeDef>
+
+	
+</Defs>

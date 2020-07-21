@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseWeaponAndAmmoNeolithic">
+		<defName>CE_Plumbata</defName>
+		<label>plumbata</label>
+		<description>A large, weighted throwing dart, filling a similiar role to the heavier javelins.</description>
+		<graphicData>
+			<texPath>Weapons/Plumbata</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<onGroundRandomRotateAngle>0</onGroundRandomRotateAngle>
+		</graphicData>
+		<soundInteract>Interact_BeatFire</soundInteract>
+		<statBases>
+			<MarketValue>2.36</MarketValue>
+			<SightsEfficiency>0.45</SightsEfficiency>
+			<ShotSpread>1.5</ShotSpread>
+			<SwayFactor>2.5</SwayFactor>
+			<Bulk>3.5</Bulk>
+			<Mass>0.5</Mass>
+			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>30</equippedAngleOffset>
+		<stackLimit>25</stackLimit>
+		<weaponTags>
+			<li>NeolithicRanged</li>
+			<li>CE_Pila</li>
+			<li>CE_OneHandedWeapon</li>
+			<li>CE_AI_Rifle</li>
+		</weaponTags>
+		<tradeTags>
+			<li>CE_AutoEnableTrade</li>
+		</tradeTags>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<verbClass>CombatExtended.Verb_ShootCEOneUse</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Plumbata_Thrown</defaultProjectile>
+				<warmupTime>1.5</warmupTime>
+				<range>12</range>
+				<soundCast>Interact_BeatFire</soundCast>
+			</li>
+		</verbs>
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>shaft</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>0.92</cooldownTime>
+				<armorPenetrationBlunt>0.563</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Shaft</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>point</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>11</power>
+				<cooldownTime>1.26</cooldownTime>
+				<chanceFactor>1.5</chanceFactor>
+				<armorPenetrationSharp>0.05</armorPenetrationSharp>				
+				<armorPenetrationBlunt>0.25</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+			</li>
+		</tools>
+		<ammoClass>Javelin</ammoClass>
+	</ThingDef>
+
+</Defs>
